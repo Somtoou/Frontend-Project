@@ -1,0 +1,11 @@
+@import "tailwindcss";
+
+@theme {
+  --color-dblue: hsl(202, 55%, 16%);
+  --color-yell: hsl(61, 70%, 52%)
+}
+/* @layer base {
+  *{
+    font-family: cursive;
+  }
+} */

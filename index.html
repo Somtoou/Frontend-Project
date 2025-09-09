@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+  <title>Frontend Mentor | Mortgage repayment calculator</title>
+
+  <link rel="stylesheet" href="./src/style.css">
+  <style>
+    .attribution {
+      font-size: 11px;
+      text-align: center;
+    }
+
+    .attribution a {
+      color: hsl(228, 45%, 44%);
+    }
+
+    input[type="number"]::-webkit-inner-spin-button,
+    input[type="number"]::-webkit-outer-spin-button {
+      -webkit-appearance: none;
+    }
+
+    input[type="radio"] {
+  accent-color: hsl(61, 70%, 52%) }
+
+  </style>
+</head>
+
+<body style="background-color: hsl(202, 86%, 94%)" class="w-full">
+  <div style="background-color: hsl(0, 0%, 100%);"
+    class="flex flex-col lg:flex-row mt-[10%] ml-[15%] mr-[15%] border-solid rounded-tl-xl rounded-bl-xl rounded-tr-xl rounded-br-xl">
+    <div style="color: hsl(200, 24%, 40%)" class=" lg:w-1/2 p-[2%] rounded-tl-xl rounded-bl-xl">
+      <div class="flex flex-wrap items-baseline-last justify-between mb-[3%]">
+        <div class="text-[25px]">Mortgage Calculator</div>
+        <div class="js-clear underline cursor-pointer">Clear All</div>
+      </div>
+      <div class="mb-[2%] ">
+        Mortgage Amount
+      </div>
+      <div class="flex border rounded-md w-[98%] hover:border-dblue active:border-yell cursor-pointer">
+        <div style="background-color: hsl(202, 86%, 94%)"
+          class="pt-[2%] pb-[2%] pr-[4%] pl-[4%] rounded-tl-md rounded-bl-md cursor-pointer">£</div>
+        <input class="js-mortgage-amount focus:border-none focus:outline-none w-full p-[2%] cursor-pointer" type="number">
+      </div>
+      <div class="mb-[4%]">
+      <p style="color: hsl(4, 69%, 50%)" class="js-amount-errormsg hidden">This field is required</p>
+        </div>
+
+
+      <div class="flex mb-[4%]">
+
+        <div class="w-1/2">
+          <div>Mortgage Term</div>
+          <div class="flex border rounded-md mr-[3%] hover:border-dblue cursor-pointer active:border-yell">
+            <input class="js-mortgage-term focus:border-none focus:outline-none p-[2%] w-[100%] cursor-pointer" type="number">
+            <div style="background-color: hsl(202, 86%, 94%)"
+              class=" pt-[2%] pb-[2%] pr-[4%] pl-[4%] rounded-tr-md rounded-br-md cursor-pointer">years</div>
+          </div>
+          <p style="color: hsl(4, 69%, 50%)" class="js-term-errormsg hidden">This field is required</p>
+        </div>
+
+        <div class="w-1/2">
+          <div>Interest Rate</div>
+          <div class="flex border rounded-md hover:border-dblue cursor-pointer active:border-yell">
+            <input class="js-interest-rate focus:border-none focus:outline-none p-[2%] w-[100%] cursor-pointer" type="number">
+            <div style="background-color:hsl(202, 86%, 94%)"
+              class="pt-[2%] pb-[2%] pr-[4%] pl-[4%] rounded-tr-md rounded-br-md cursor-pointer">%</div>
+          </div>
+          <p style="color: hsl(4, 69%, 50%)" class="js-interest-errormsg hidden">This field is required</p>
+        </div>
+      </div>
+
+      <div>
+        Mortgage Type
+      </div>
+      <div class="js-repayment-button border p-[1%] mb-[2%] rounded-md hover:border-yell cursor-pointer">
+        <input style="color: hsl(61, 70%, 52%);" class="js-repayment-option cursor-pointer" type="radio" name="mortgage-type">
+        <span style="color: hsl(202, 55%, 16%);">
+          Repayment
+        </span>
+      </div>
+      <div class="js-interest-button border p-[1%] rounded-md hover:border-yell cursor-pointer">
+        <input class="js-interest-option cursor-pointer" type="radio" name="mortgage-type">
+        <span style="color: hsl(202, 55%, 16%);">
+          Interest Only
+        </span>
+      </div>
+      <div class="mb-[6%]">
+      <p style="color: hsl(4, 69%, 50%)" class="js-type-errormsg hidden">This field is required</p>
+      </div>
+      
+      <button style="background-color: hsl(61, 70%, 52%); color: hsl(202, 55%, 16%);"
+        class="js-calculate-button flex rounded-full w-[83%] sm:w-[50%] md:w-[45%] lg:w-[65%] xl:w-[53%]"><img src="images/icon-calculator.svg" class="pl-[5%] xl:pl-[5%]">
+        <div class="pl-[4%] pr-[5%] pt-[4%] pb-[4%] xl:pl-[4%] xl:pr-[5%] xl:pt-[4%] xl:pb-[4%]">Calculate Repayments</div>
+      </button>
+    </div>
+
+
+    <div style="background-color: hsl(200, 24%, 40%); color: hsl(0, 0%, 100%);" class="js-payments-page w-full lg:w-1/2 p-[2%] lg:rounded-bl-4xl rounded-bl-xl rounded-tr-xl rounded-br-xl ">
+
+
+      <div class="flex justify-center text-center">
+      <img src="images/illustration-empty.svg">
+      </div>
+      <div class="pt-[10%]">
+      <div class="text-[25px] mb-[2%]">
+        Results shown here
+      </div>
+
+      <div>
+      Complete the form and click “calculate repayments” to see what
+      your monthly repayments would be.
+      </div>
+      </div>
+
+
+      
+    </div>
+
+  </div>
+
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+
+  <script src="index.js"></script>
+</body>
+
+</html>
