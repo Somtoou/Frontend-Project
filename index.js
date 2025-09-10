@@ -40,7 +40,6 @@ function calculateInterestOnlyMonthlyPayment(amount, interest) {
 
 
 calculateBtn.addEventListener('click', () => {
-    console.log('clicked');
     if (amount.value==="") {
         amtError.style.display='block'
         // setTimeout(() => {
@@ -78,7 +77,7 @@ totalRepayment = payment*12*term.value;
 
 const interestPayment =  calculateInterestOnlyMonthlyPayment(amount, interest).toFixed(2)
 
-
+const totalInterestPayment = interestPayment*12*term.value + Number(amount.value);
 
 if (repaymentOpt.checked===true) {
     document.querySelector('.js-payments-page').innerHTML = `<div class="text-[25px]">Your results</div>
